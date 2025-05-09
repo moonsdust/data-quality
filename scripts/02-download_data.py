@@ -4,7 +4,7 @@
 # Date: 7 May 2025
 # Contact: em.su@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: Have the required packages ('requests', 'csv', and 'io') installed.
+# Pre-requisites: Have the required packages installed by following the instructions in README.md under "Setup".
 
 
 #### Workspace setup ####
