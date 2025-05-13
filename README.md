@@ -5,9 +5,9 @@
 ## Setup
 1. Install `uv` by opening your terminal and entering the following command: `curl -LsSf https://astral.sh/uv/install.sh | sh`
 2. Next, open to the directory where the `data-quality` folder is located. So for example, if the `data-quality` folder is located in your downloads folder, you will enter the following command into your terminal: `cd downloads/data-quality`. 
-3. Install Python 3.13 using the following command: `uv python install 3.13`. 
-4. Create virtual environment for your dependencies with the following command: `uv venv --python 3.13` (for MacOS).
-4. Activate virtual environment: `source .venv/bin/activate>` (for MacOS)
+3. Install Python 3.11 using the following command: `uv python install 3.11`. 
+4. Create virtual environment for your dependencies with the following command: `uv venv --python 3.11` (for MacOS).
+4. Activate virtual environment: `source .venv/bin/activate` (for MacOS)
 5. Install the necessary packages using the following command: `uv pip install -r requirements.txt` and then added to the project using: `uv add -r requirements.txt`. 
 
 ## File Structure
