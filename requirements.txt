@@ -7,3 +7,4 @@ polars
 pydantic
 requests
 seaborn
+great_expectations
