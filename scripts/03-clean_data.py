@@ -9,29 +9,18 @@
 
 #### Workspace setup ####
 import polars as pl
-import datetime
 
 #### Clean data ####
 # Read in CSV file
 the_raw_data = pl.read_csv("data/01-raw_data/raw_data.csv")
 
 # Select specific columns
-selected_columns = ["package", "accessibility", "completeness", "freshness", "metadata", "usability", "score", "grade", "recorded_at"]
+selected_columns = ["package", "accessibility", "completeness", "freshness", "metadata", "usability", "grade"]
 
 selected_df = the_raw_data.select(selected_columns)
 
-# # Filter to only rows that have data
-# filtered_df = selected_df.filter(the_raw_data["OCCUPIED_BEDS"].is_not_null())
+# Filter to only rows that have no NONE data
+filtered_df = selected_df.filter(the_raw_data["package"].is_not_null() & the_raw_data["accessibility"].is_not_null() & the_raw_data["completeness"].is_not_null() & the_raw_data["freshness"].is_not_null() & the_raw_data["metadata"].is_not_null() & the_raw_data["usability"].is_not_null() & the_raw_data["grade"].is_not_null())
 
-# print(filtered_df.head())
-
-# renamed_df = filtered_df.rename({"OCCUPANCY_DATE": "date",
-#                                  "SHELTER_ID": "Shelters",
-#                                  "CAPACITY_ACTUAL_BED": "Capacity",
-#                                  "OCCUPIED_BEDS": "Usage"
-#                                  })
-
-# # print(renamed_df.head())
-
-# #### Save data ####
-# renamed_df.write_csv("outputs/data/analysis_data.csv")
+#### Save data ####
+filtered_df.write_csv("data/02-analysis_data/analysis_data.csv")
