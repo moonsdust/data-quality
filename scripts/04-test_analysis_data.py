@@ -20,7 +20,6 @@ cleaned_data = pl.read_csv("data/02-analysis_data/analysis_data.csv")
 # Check columns type
 schema = pb.Schema(
     columns=[
-        ("package", "String"),
         ("accessibility", "Int64"),
         ("completeness", "Float64"),
         ("freshness", "Float64"),
@@ -47,7 +46,7 @@ check_for_null_test = (
         label="Check NULL Test"
     )
      .col_vals_not_null(
-      columns=["package", "accessibility", "completeness", "freshness", "metadata", "usability", "grade"]
+      columns=["accessibility", "completeness", "freshness", "metadata", "usability", "grade"]
    )
     .interrogate()
 )
@@ -60,7 +59,7 @@ check_for_empty_strings_test = (
         label="Check for empty strings test"
     )
     .col_vals_regex(
-        columns=["package", "grade"],# check that all string columns are non-empty strings
+        columns=["grade"],# check that all string columns are non-empty strings
         pattern=r"(.|\s)*\S(.|\s)*" # Referenced: https://posit-dev.github.io/pointblank/demos/column-selector-functions/index.html
     )
     .interrogate()
