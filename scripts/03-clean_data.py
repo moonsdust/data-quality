@@ -20,7 +20,12 @@ selected_columns = ["accessibility", "completeness", "freshness", "metadata", "u
 selected_df = the_raw_data.select(selected_columns)
 
 # Filter to only rows that have no NONE data
-filtered_df = selected_df.filter(the_raw_data["accessibility"].is_not_null() & the_raw_data["completeness"].is_not_null() & the_raw_data["freshness"].is_not_null() & the_raw_data["metadata"].is_not_null() & the_raw_data["usability"].is_not_null() & the_raw_data["grade"].is_not_null())
+filtered_df = selected_df.filter(the_raw_data["accessibility"].is_not_null() & 
+                                 the_raw_data["completeness"].is_not_null() & 
+                                 the_raw_data["freshness"].is_not_null() & 
+                                 the_raw_data["metadata"].is_not_null() & 
+                                 the_raw_data["usability"].is_not_null() & 
+                                 the_raw_data["grade"].is_not_null())
 
 #### Save data ####
 filtered_df.write_csv("data/02-analysis_data/analysis_data.csv")
