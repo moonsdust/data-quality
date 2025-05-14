@@ -1,8 +1,7 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  # state and party that won each division.
+# Purpose: Simulates a dataset of the data quality of datasets on Open Data Toronto
 # Author: Emily Su
-# Date: 9 May 2025
+# Date: 13 May 2025
 # Contact: em.su@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: 
@@ -13,36 +12,33 @@
 #### Workspace setup ####
 import polars as pl
 import numpy as np
-np.random.seed(853)
+np.random.seed(646)
 
 
 #### Simulate data ####
-# State names
-states = [
-    "New South Wales", "Victoria", "Queensland", "South Australia", 
-    "Western Australia", "Tasmania", "Northern Territory", 
-    "Australian Capital Territory"
+# Grade
+grade = [
+  "Bronze", "Silver", "Gold"
 ]
 
-# Political parties
-parties = ["Labor", "Liberal", "Greens", "National", "Other"]
-
-# Probabilities for state and party distribution
-state_probs = [0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025]
-party_probs = [0.40, 0.40, 0.05, 0.1, 0.05]
-
 # Generate the data using numpy and polars
-divisions = [f"Division {i}" for i in range(1, 152)]
-states_sampled = np.random.choice(states, size=151, replace=True, p=state_probs)
-parties_sampled = np.random.choice(parties, size=151, replace=True, p=party_probs)
+accessibility = np.random.randint(low=0, high=1, size=151, dtype=int)
+completeness = np.random.random()
+freshness = np.random.random()
+metadata = np.random.random()
+usability = np.random.random()
+grade = np.random.choice(grade, size=151, replace=True, p=[0.5, 0.25, 0.25])
+
 
 # Create a polars DataFrame
 analysis_data = pl.DataFrame({
-    "division": divisions,
-    "state": states_sampled,
-    "party": parties_sampled
+    "accessibility": accessibility,
+    "completeness": completeness,
+    "freshness": freshness,
+    "metadata": metadata,
+    "usability": usability,
+    "grade": grade
 })
-
 
 #### Save data ####
 analysis_data.write_csv("data/00-simulated_data/simulated_data.csv")
