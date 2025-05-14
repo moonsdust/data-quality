@@ -35,7 +35,7 @@ cleaned_data = cleaned_data.to_pandas()
 
 # Introduction
 
-In the analysis of our paper, we looked at the following questions: What is the quality of the datasets on Open Data Toronto? What are the features of different types of datasets on Open Data Toronto? 
+In the analysis of our paper, we looked at the following questions: What is the quality of the datasets on the Open Data Toronto portal? What are the features of different types of datasets on Open Data Toronto? 
 
 For the remainder of the paper, the data section (@sec-data) looks at the data used and how it was retrieved alongside the characteristics of the data and our variables of interest for our analysis. In the results section (@sec-results) we looked at the data more in-depth through graphs. Finally, the appendix (@sec-appendix) includes acknowledgements and any additional information related to the paper.
 
@@ -68,8 +68,7 @@ The Information & Technology department at Open Data Toronto collected
 
 ## Variables of Interest
 
-Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
-
+Our variables of interest are "accessibility", "completeness", "freshness", "metadata", "usability", and "grade". 
 
 # Results {#sec-results}
 
