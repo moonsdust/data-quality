@@ -6,7 +6,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/moonsdust/data-quality](https://github.com/moonsdust/data-quality)."
 date: today
 date-format: long
-abstract: "As one of the central hubs for Toronto-related data, we conducted analysis on the data quality of Open Data Toronto's catalogue. We found that despite Open Data Toronto's extensive dataset catalogue being accessible and having minimal missing data, 56% of their datasets are graded bronze and bronze-graded datasets are less likely to be updated and have completed metadata fields. These findings can help raise awareness to Open Data Toronto whose datasets play an important role in news reporting and policymaking and anyone who is interested using datasets from Open Data Toronto's catalogue understand what goes behind the grade given to datasets."
+abstract: "As one of the central hubs for Toronto-related data, we analyzed the data quality of Open Data Toronto's catalogue. Despite Open Data Toronto's extensive dataset catalogue being accessible and having minimal missing data, 56% of their datasets are graded bronze and bronze-graded datasets are less likely to be updated and have completed metadata fields. These findings can help raise awareness to Open Data Toronto whose datasets play an important role in news reporting and policymaking, and also inform anyone interested in using datasets from Open Data Toronto's catalogue about what goes behind the grade given to datasets."
 format:
   pdf:
     toc: true
