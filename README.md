@@ -1,7 +1,7 @@
 # Accessible and Completed Datasets yet Majority are Bronze-Graded and not Updated Regularly with Missing Metadata: An analysis of the data quality of datasets available on the Open Data Toronto Portal (As of May 13, 2025)
 
 ## Overview
-As one of the central hubs for Toronto-related data, we conducted analysis on the data quality of Open Data Toronto's catalogue. We found that despite Open Data Toronto's extensive dataset catalogue being accessible and having minimal missing data, 56% of their datasets are graded bronze and bronze-graded datasets are less likely to be updated and have completed metadata fields. These findings can help raise awareness to Open Data Toronto whose datasets play an important role in news reporting and policymaking and for anyone interested in the datasets understand what goes behind the grade given to datasets.
+As one of the central hubs for Toronto-related data, we conducted analysis on the data quality of Open Data Toronto's catalogue. We found that despite Open Data Toronto's extensive dataset catalogue being accessible and having minimal missing data, 56% of their datasets are graded bronze and bronze-graded datasets are less likely to be updated and have completed metadata fields. These findings can help raise awareness to Open Data Toronto whose datasets play an important role in news reporting and policymaking and anyone who is interested using datasets from Open Data Toronto's catalogue understand what goes behind the grade given to datasets.
 
 ## Setup
 1. Install `uv` by opening your terminal and entering the following command: `curl -LsSf https://astral.sh/uv/install.sh | sh`
