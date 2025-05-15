@@ -82,9 +82,9 @@ Open Data Toronto uses a metric called the "Data Quality Score" in order to give
 
 Open Data Toronto first reviewed various literature such as academic papers and industry white papers to compile 15 dimensions used to measure quality [@citeCatalogue; @citeCatalogueSteps]. The dimensions selected were as follows: Interpretability ("How easy it is to understand the data?"), Usability ("How easy is it to work with the data?"), Metadata ("Is the data well described?"), Freshness ("How close to creation time is the data published?"), Granularity ("How atomic is the data?"), Completeness ("How much data is missing?"), and Accessibility ("Is the data easy to access?") [@citeCatalogue; @citeCatalogueSteps]. 
 
-From there the Data Quality Working Group were surveyed and asked to rank the importance of each dimension when it comes to assessing data quality where 1 represents the most important and 7 being the least important. The results from the survey would then help the team determine the weighting of each dimension towards the overall data quality score. Some of the dimensions were combined or removed. For example, granularity and interpretability were removed and interpretability was combined with usability. The team then used the ranking weighting method, Sum and Reciprocal, and obtain the following weights for each dimension alongside the type of questions asked for each dimension [@citeCatalogue; @citeCatalogueSteps]: 
+From there the Data Quality Working Group were surveyed and asked to rank the importance of each dimension when it comes to assessing data quality where 1 represents the most important and 7 being the least important. The results from the survey would then help the team determine the weight of each dimension towards the overall data quality score. Some of the dimensions were combined or removed. For example, granularity and interpretability were removed and interpretability was combined with usability. The team then used the ranking weighing method, Sum and Reciprocal, and obtain the following weights for each dimension alongside the type of questions asked for each dimension [@citeCatalogue; @citeCatalogueSteps]: 
 
-![Weight of the selected dimensions for data quality assessment and the metrics for each dimension](../other/images/weighting_of_dimensions.png)
+![Weight of the selected dimensions for data quality assessment and the metrics for each dimension](../other/images/weight.png)
 
 For more technical details about how each dimension is calculated for a dataset and the final data quality score, it can be through the following link:[https://github.com/open-data-toronto/framework-data-quality/blob/master/data_quality_score.ipynb](https://github.com/open-data-toronto/framework-data-quality/blob/master/data_quality_score.ipynb) [@citeDQSNotebook]. However, it is worth noting that each dimension are calculated based on data obtained on the metadata information and the dataset itself. If the data quality score of a dataset has a normalized score of less than 60%, they are given the grade "Bronze", if the normalized score is between 60% and 80%, it is given the grade "Silver", and finally if the normalized score is over 80%, tit is given the grade "Gold". The Information & Technology department at Open Data Toronto collected datasets on their portal using the CKAN Datastore API in order to give each of them a data quality score and grade [@citeCatalogue; @citeCatalogueSteps]. The score for each dataset in the portal is recalculated every week by the team [@citeCatalogue]. 
 
@@ -250,15 +250,16 @@ As of May 13, 2025, @fig-freshness-distribution indicates that for gold-graded a
 \newpage
 
 # Discussion {#sec-discussion}
-In @sec-results, we 
+In @sec-results, we looked at the data quality of 39,580 datasets on the Open Data Toronto 
 
-## Point 1
+## Majority of Datasets are graded "Bronze" 
 
 
-## Point 2
+## Bronze-graded datasets are less likely to update and have missing metadata 
 
 
 ## Areas of improvement 
+As mentioned in @sec-data, datasets have a higher usability score if their column names contains more English words. However, this criteria does not consider datasets that could be still useful but are not in English. Another limitation of our analysis is that the weight of the different dimensions in the data that goes towards the grade of a dataset is subjective in nature since the weighing is based on survey data that had people rank the perceived importance of each dimension. 
 
 ## Next steps
 
