@@ -45,7 +45,7 @@ For the remainder of the paper, the data section (@sec-data) looks at the data u
 
 The dataset used in the paper comes from Open Data Toronto portal titled "Catalogue quality scores" [@citeOpenDataToronto]. Other datasets like "Toronto Open Data Intake" were considered in the analysis of the paper however, it does not indicate the quality of the datasets that are being requested. This specific dataset looks at the quality of the datasets available from the Open Data Toronto catalogue to inform others
 how valuable certain datasets are to be used for various situations like reporting on civic issues. The datasets are scored based on characteristics such as its accessibility, completeness, freshness, metadata, and usability, which are then calculated together to 
-give a dataset a grade that is displayed alongside a trophy icon under the details section on a dataset page on Open Data Toronto portal [@citeOpenDataToronto].  
+give a dataset a grade. This grade is displayed alongside a trophy icon under the details section on a dataset page on Open Data Toronto portal [@citeOpenDataToronto].  
 
 We used the programming language Python [@citePython], the statistical programming language R [@citeR], and the following libraries to download, clean, analyze, and test the dataset and the overall paper itself: Requests [@citeRequests], datetime [@citeDatetime], Matplotlib [@citeMatplotlib], numpy [@citenumpy], pandas [@citepandas], Polars [@citepolars], Pydantic [@citePydantic], seaborn [@citeSeaborn], Pointblank [@citePointblank], and Pyarrow [@citePyarrow].
 
@@ -76,11 +76,12 @@ cleaned_data.describe()
 ```
 
 ## Measurement
-The Information & Technology department at Open Data Toronto collected datasets on their portal using the CKAN API
-[@citeCatalogue; @citeCatalogueSteps]
+The Information & Technology department at Open Data Toronto collected datasets on their portal using the CKAN Datastore API
+[@citeCatalogue; @citeCatalogueSteps]. Open Data Toronto uses a metric called the "Data Quality Score" in order to give each dataset in their catalogue a grade indicating "bronze", "silver", or "gold", which can be seen through on the webpage for each dataset on Open Data Toronto portal website. In order to create the "Data Quality Score", they assembled the Data Quality Working Group, which consist of a diverse group of people from consumers of datasets to people who create datasets [@citeCatalogue; @citeCatalogueSteps]. Open Data Toronto first reviewed various literature such as academic papers and industry white papers to compile 15 dimensions used to measure quality [@citeCatalogue; @citeCatalogueSteps]. The dimensions selected were as follows: Interpretability ("How easy it is to understand the data?"), Usability ("How easy is it to work with the data?"), Metadata ("Is the data well described?"), Freshness ("How close to creation time is the data published?"), Granularity ("How atomic is the data?"), Completeness ("How much data is missing?"), and Accessibility ("Is the data easy to access?") [@citeCatalogue; @citeCatalogueSteps]. From there the Data Quality Working Group were surveyed and asked to rank the importance of each dimension when it comes to assessing data quality where 1 represents the most important and 7 being the least important. The results from the survey would then help the team determine the weighting of each dimension towards the overall data quality score. Some of the dimensions were combined or removed. For example, granularity and interpretability were removed and interpretability was combined with usability. The team then used the ranking weighting method, Sum and Reciprocal, and obtain the following weights for each dimension alongside the type of questions asked for each dimension [@citeCatalogue; @citeCatalogueSteps]: 
 
+![Weighting](other/images/weighting_of_dimensions.png)
 
-The score for each dataset is recalculated every week [@citeCatalogue]
+For more technical details about how each dimension is calculated for a dataset and the final data quality score, it can be through the following link: [https://github.com/open-data-toronto/framework-data-quality/blob/master/data_quality_score.ipynb](https://github.com/open-data-toronto/framework-data-quality/blob/master/data_quality_score.ipynb) [@citeDQSNotebook]. However, it is worth noting that each dimension are calculated based on data obtained on the metadata information and the dataset itself. If the data quality score of a dataset has a normalized score of less than 60%, they are given the grade "Bronze", if the normalized score is between 60% and 80%, it is given the grade "Silver", and finally if the normalized score is over 80%, tit is given the grade "Gold". The score for each dataset in the portal is recalculated every week by the team [@citeCatalogue]. 
 
 ## Variables of Interest
 
@@ -250,8 +251,6 @@ As of May 13, 2025, @fig-freshness-distribution indicates that for gold-graded a
 ## Acknowledgments
 
 We would like to thank @tellingstories for providing assistance with the code used to produce the graphs in this paper.
-
-\newpage
 
 
 # References
