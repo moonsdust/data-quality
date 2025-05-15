@@ -250,19 +250,19 @@ As of May 13, 2025, @fig-freshness-distribution indicates that for gold-graded a
 \newpage
 
 # Discussion {#sec-discussion}
-In @sec-results, we looked at the data quality of 39,580 datasets on the Open Data Toronto 
+In @sec-results, we looked at the data quality of 39,580 datasets on the Open Data Toronto as of May 13, 2025 and the different characteristics of the datasets. We found that our analysis was consistent with what @citeFarrow found where the metadata and freshness scores of datasets overall was poor but also we found that the low scores were contributed from the bronze-graded datasets. 
 
 ## Majority of Datasets are graded "Bronze" 
-
+We saw with that with @fig-grade-accessibility-bar that 56% of datasets in the Open Data Toronto portal are graded "Bronze". This indicates that 56% of datasets had a data quality score of less than 60%. This also raises concerns regarding the quality of the datasets used in news report for example as well as bring awareness of the quality of datasets currently on the portal. Fortunately based on what @citeFarrow found in comparison to our results in 2025, there has a decrease in bronze-graded datasets since 2021 from 78% to 56%. 
 
 ## Bronze-graded datasets are less likely to update and have missing metadata 
-
+Our results from @fig-metadata-distribution and @fig-freshness-distribution shows that bronze-graded datasets have low metadata and freshness scores close to 0 or 0%. This indicates that the bronze-graded datasets contributes to the low metadata and freshness score seen of Open Data Toronto's entire data catalogue. As noted by IBM, Metadata plays an important role in "data governance and data management" [@citeMetadataImportance]. This means that the lack of metadata for a dataset decreases the experience for users and organization of using the datasets leading to potentially consequences due to issues such as the lack of information of the dataset's limitations and the lack of information about the dataset author's and their contact information. 
 
 ## Areas of improvement 
 As mentioned in @sec-data, datasets have a higher usability score if their column names contains more English words. However, this criteria does not consider datasets that could be still useful but are not in English. Another limitation of our analysis is that the weight of the different dimensions in the data that goes towards the grade of a dataset is subjective in nature since the weighing is based on survey data that had people rank the perceived importance of each dimension. 
 
 ## Next steps
-
+Results from our analysis can be used help the Open Data Toronto team figure out the qualities of bronze-graded datasets that leads to their low scores and also be insight for users of the datasets from Open Data Toronto about what goes behind the grade of the datasets. Future works regarding Open Data Toronto's catalogue can look into the data quality score of the datasets from different divisions.
 
 \newpage
 
@@ -272,8 +272,7 @@ As mentioned in @sec-data, datasets have a higher usability score if their colum
 
 ## Acknowledgments
 
-We would like to thank @tellingstories for providing assistance with the code used to produce the graphs in this paper.
-
+We would like to thank @tellingstories for providing assistance with the code used to produce the graphs in this paper. We would also like to thank the team at the IJF for their feedback. 
 
 # References
 
